@@ -93,6 +93,142 @@
   --color-interactive-hover: #F2F2F2;
   --color-interactive-pressed: #E4E4E4;
   --color-interactive-disabled: #D4D3D3;
+
+  /* Typography - Desktop (Default) */
+  /* Font Families */
+  --font-family-korean: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-family-english: SUIT Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+
+  /* Web Headlines */
+  --typography-web-headline-headline01-font-family: var(--font-family-korean);
+  --typography-web-headline-headline01-font-weight: 600;
+  --typography-web-headline-headline01-font-size: 48px;
+  --typography-web-headline-headline01-line-height: 60px;
+  --typography-web-headline-headline01-letter-spacing: 0px;
+
+  --typography-web-headline-headline02-font-family: var(--font-family-korean);
+  --typography-web-headline-headline02-font-weight: 600;
+  --typography-web-headline-headline02-font-size: 36px;
+  --typography-web-headline-headline02-line-height: 48px;
+  --typography-web-headline-headline02-letter-spacing: 0px;
+
+  --typography-web-headline-headline03-font-family: var(--font-family-korean);
+  --typography-web-headline-headline03-font-weight: 600;
+  --typography-web-headline-headline03-font-size: 28px;
+  --typography-web-headline-headline03-line-height: 36px;
+  --typography-web-headline-headline03-letter-spacing: 0px;
+
+  /* Headlines */
+  --typography-headline-headline01-font-family: var(--font-family-korean);
+  --typography-headline-headline01-font-weight: 700;
+  --typography-headline-headline01-font-size: 24px;
+  --typography-headline-headline01-line-height: 32px;
+  --typography-headline-headline01-letter-spacing: 0px;
+
+  --typography-headline-headline02-font-family: var(--font-family-korean);
+  --typography-headline-headline02-font-weight: 800;
+  --typography-headline-headline02-font-size: 22px;
+  --typography-headline-headline02-line-height: 30px;
+  --typography-headline-headline02-letter-spacing: 0px;
+
+  --typography-headline-headline03-font-family: var(--font-family-korean);
+  --typography-headline-headline03-font-weight: 700;
+  --typography-headline-headline03-font-size: 20px;
+  --typography-headline-headline03-line-height: 28px;
+  --typography-headline-headline03-letter-spacing: 0px;
+
+  /* Titles */
+  --typography-title-title01-font-family: var(--font-family-korean);
+  --typography-title-title01-font-weight: 700;
+  --typography-title-title01-font-size: 18px;
+  --typography-title-title01-line-height: 24px;
+  --typography-title-title01-letter-spacing: 0px;
+
+  --typography-title-title02-font-family: var(--font-family-korean);
+  --typography-title-title02-font-weight: 700;
+  --typography-title-title02-font-size: 16px;
+  --typography-title-title02-line-height: 22px;
+  --typography-title-title02-letter-spacing: 0px;
+
+  --typography-title-title03-font-family: var(--font-family-korean);
+  --typography-title-title03-font-weight: 700;
+  --typography-title-title03-font-size: 14px;
+  --typography-title-title03-line-height: 20px;
+  --typography-title-title03-letter-spacing: 0px;
+
+  --typography-title-subtitle01-font-family: var(--font-family-korean);
+  --typography-title-subtitle01-font-weight: 600;
+  --typography-title-subtitle01-font-size: 14px;
+  --typography-title-subtitle01-line-height: 22px;
+  --typography-title-subtitle01-letter-spacing: 0px;
+
+  --typography-title-subtitle02-font-family: var(--font-family-korean);
+  --typography-title-subtitle02-font-weight: 600;
+  --typography-title-subtitle02-font-size: 12px;
+  --typography-title-subtitle02-line-height: 18px;
+  --typography-title-subtitle02-letter-spacing: 0px;
+
+  /* Body */
+  --typography-body-body01-font-family: var(--font-family-korean);
+  --typography-body-body01-font-weight: 500;
+  --typography-body-body01-font-size: 16px;
+  --typography-body-body01-line-height: 24px;
+  --typography-body-body01-letter-spacing: 0px;
+
+  --typography-body-body02-font-family: var(--font-family-korean);
+  --typography-body-body02-font-weight: 500;
+  --typography-body-body02-font-size: 14px;
+  --typography-body-body02-line-height: 22px;
+  --typography-body-body02-letter-spacing: 0px;
+
+  --typography-body-body03-font-family: var(--font-family-korean);
+  --typography-body-body03-font-weight: 500;
+  --typography-body-body03-font-size: 12px;
+  --typography-body-body03-line-height: 18px;
+  --typography-body-body03-letter-spacing: 0px;
+
+  --typography-body-body01-regular-font-family: var(--font-family-korean);
+  --typography-body-body01-regular-font-weight: 400;
+  --typography-body-body01-regular-font-size: 16px;
+  --typography-body-body01-regular-line-height: 22px;
+  --typography-body-body01-regular-letter-spacing: 0px;
+
+  --typography-body-body02-regular-font-family: var(--font-family-korean);
+  --typography-body-body02-regular-font-weight: 400;
+  --typography-body-body02-regular-font-size: 14px;
+  --typography-body-body02-regular-line-height: 20px;
+  --typography-body-body02-regular-letter-spacing: 0px;
+
+  --typography-body-body03-regular-font-family: var(--font-family-korean);
+  --typography-body-body03-regular-font-weight: 400;
+  --typography-body-body03-regular-font-size: 12px;
+  --typography-body-body03-regular-line-height: 16px;
+  --typography-body-body03-regular-letter-spacing: 0px;
+
+  /* Captions */
+  --typography-caption-caption01-font-family: var(--font-family-korean);
+  --typography-caption-caption01-font-weight: 600;
+  --typography-caption-caption01-font-size: 12px;
+  --typography-caption-caption01-line-height: 14px;
+  --typography-caption-caption01-letter-spacing: 0px;
+
+  --typography-caption-caption02-font-family: var(--font-family-korean);
+  --typography-caption-caption02-font-weight: 600;
+  --typography-caption-caption02-font-size: 10px;
+  --typography-caption-caption02-line-height: 12px;
+  --typography-caption-caption02-letter-spacing: 0px;
+
+  --typography-caption-caption02-medium-font-family: var(--font-family-korean);
+  --typography-caption-caption02-medium-font-weight: 500;
+  --typography-caption-caption02-medium-font-size: 10px;
+  --typography-caption-caption02-medium-line-height: 12px;
+  --typography-caption-caption02-medium-letter-spacing: 0px;
+
+  --typography-caption-caption03-font-family: var(--font-family-korean);
+  --typography-caption-caption03-font-weight: 600;
+  --typography-caption-caption03-font-size: 8px;
+  --typography-caption-caption03-line-height: 10px;
+  --typography-caption-caption03-letter-spacing: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,10 +255,83 @@
   }
 }
 
+/* Mobile Typography Overrides */
+@media (max-width: 767px) {
+  :root {
+    /* Web Headlines - Mobile */
+    --typography-web-headline-headline01-font-size: 36px;
+    --typography-web-headline-headline01-line-height: 48px;
+
+    --typography-web-headline-headline02-font-size: 28px;
+    --typography-web-headline-headline02-line-height: 36px;
+
+    --typography-web-headline-headline03-font-size: 24px;
+    --typography-web-headline-headline03-line-height: 32px;
+
+    /* Headlines - Mobile */
+    --typography-headline-headline01-font-size: 20px;
+    --typography-headline-headline01-line-height: 28px;
+
+    --typography-headline-headline02-font-size: 18px;
+    --typography-headline-headline02-line-height: 26px;
+
+    --typography-headline-headline03-font-size: 16px;
+    --typography-headline-headline03-line-height: 24px;
+
+    /* Titles - Mobile */
+    --typography-title-title01-font-size: 16px;
+    --typography-title-title01-line-height: 22px;
+
+    --typography-title-title02-font-size: 14px;
+    --typography-title-title02-line-height: 20px;
+
+    --typography-title-title03-font-size: 12px;
+    --typography-title-title03-line-height: 18px;
+
+    --typography-title-subtitle01-font-size: 12px;
+    --typography-title-subtitle01-line-height: 18px;
+
+    --typography-title-subtitle02-font-size: 10px;
+    --typography-title-subtitle02-line-height: 16px;
+
+    /* Body - Mobile */
+    --typography-body-body01-font-size: 14px;
+    --typography-body-body01-line-height: 20px;
+
+    --typography-body-body02-font-size: 12px;
+    --typography-body-body02-line-height: 18px;
+
+    --typography-body-body03-font-size: 10px;
+    --typography-body-body03-line-height: 16px;
+
+    --typography-body-body01-regular-font-size: 14px;
+    --typography-body-body01-regular-line-height: 20px;
+
+    --typography-body-body02-regular-font-size: 12px;
+    --typography-body-body02-regular-line-height: 18px;
+
+    --typography-body-body03-regular-font-size: 10px;
+    --typography-body-body03-regular-line-height: 14px;
+
+    /* Captions - Mobile */
+    --typography-caption-caption01-font-size: 10px;
+    --typography-caption-caption01-line-height: 12px;
+
+    --typography-caption-caption02-font-size: 8px;
+    --typography-caption-caption02-line-height: 10px;
+
+    --typography-caption-caption02-medium-font-size: 8px;
+    --typography-caption-caption02-medium-line-height: 10px;
+
+    --typography-caption-caption03-font-size: 6px;
+    --typography-caption-caption03-line-height: 8px;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-korean);
 }
 
 @layer utilities {
