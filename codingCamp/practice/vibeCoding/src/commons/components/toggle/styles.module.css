@@ -1,0 +1,426 @@
+/**
+ * Toggle Component Styles
+ * Figma 디자인 기반 토글 스위치 스타일 (노드 ID: 3:1704, 3:3070)
+ */
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/* Wrapper for toggle with label */
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Base Toggle Container */
+.toggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hidden Input */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Toggle Slider Track */
+.slider {
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+}
+
+/* Toggle Thumb */
+.thumb {
+  display: block;
+  background-color: var(--color-gray-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2px;
+}
+
+/* Label Styles */
+.label {
+  font-family: var(--font-family-korean);
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+}
+
+.label.labelDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ========================================
+   SIZE VARIANTS
+   ======================================== */
+
+/* Small Size */
+.toggle.size-small .slider {
+  width: 36px;
+  height: 20px;
+}
+
+.toggle.size-small .thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.toggle.size-small.checked .slider {
+  justify-content: flex-end;
+}
+
+.toggle.size-small + .label,
+.label.size-small {
+  font-size: 14px;
+}
+
+/* Medium Size - Figma 기준 */
+.toggle.size-medium .slider {
+  width: 44px;
+  height: 24px;
+}
+
+.toggle.size-medium .thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle.size-medium.checked .slider {
+  justify-content: flex-end;
+}
+
+.toggle.size-medium + .label,
+.label.size-medium {
+  font-size: 16px;
+}
+
+/* Large Size */
+.toggle.size-large .slider {
+  width: 52px;
+  height: 28px;
+}
+
+.toggle.size-large .thumb {
+  width: 24px;
+  height: 24px;
+}
+
+.toggle.size-large.checked .slider {
+  justify-content: flex-end;
+}
+
+.toggle.size-large + .label,
+.label.size-large {
+  font-size: 18px;
+}
+
+/* ========================================
+   VARIANT: PRIMARY
+   ======================================== */
+
+/* Primary - Light Theme */
+.toggle.variant-primary.theme-light .slider {
+  background-color: var(--color-gray-30);
+}
+
+.toggle.variant-primary.theme-light.checked .slider {
+  background-color: var(--color-primary);
+}
+
+.toggle.variant-primary.theme-light:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-40);
+}
+
+.toggle.variant-primary.theme-light.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-blue-60);
+}
+
+.toggle.variant-primary.theme-light .label {
+  color: var(--color-text-primary);
+}
+
+/* Primary - Dark Theme */
+.toggle.variant-primary.theme-dark .slider {
+  background-color: var(--color-gray-60);
+}
+
+.toggle.variant-primary.theme-dark.checked .slider {
+  background-color: var(--color-blue-60);
+}
+
+.toggle.variant-primary.theme-dark:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-50);
+}
+
+.toggle.variant-primary.theme-dark.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-blue-50);
+}
+
+.toggle.variant-primary.theme-dark .label {
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   VARIANT: SECONDARY
+   ======================================== */
+
+/* Secondary - Light Theme */
+.toggle.variant-secondary.theme-light .slider {
+  background-color: transparent;
+  border-color: var(--color-gray-30);
+}
+
+.toggle.variant-secondary.theme-light.checked .slider {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.toggle.variant-secondary.theme-light:hover:not(.disabled) .slider {
+  border-color: var(--color-gray-40);
+}
+
+.toggle.variant-secondary.theme-light.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-blue-60);
+  border-color: var(--color-blue-60);
+}
+
+.toggle.variant-secondary.theme-light .label {
+  color: var(--color-text-primary);
+}
+
+/* Secondary - Dark Theme */
+.toggle.variant-secondary.theme-dark .slider {
+  background-color: transparent;
+  border-color: var(--color-gray-60);
+}
+
+.toggle.variant-secondary.theme-dark.checked .slider {
+  background-color: var(--color-blue-60);
+  border-color: var(--color-blue-60);
+}
+
+.toggle.variant-secondary.theme-dark:hover:not(.disabled) .slider {
+  border-color: var(--color-gray-50);
+}
+
+.toggle.variant-secondary.theme-dark.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-blue-50);
+  border-color: var(--color-blue-50);
+}
+
+.toggle.variant-secondary.theme-dark .label {
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   VARIANT: TERTIARY
+   ======================================== */
+
+/* Tertiary - Light Theme */
+.toggle.variant-tertiary.theme-light .slider {
+  background-color: var(--color-gray-10);
+}
+
+.toggle.variant-tertiary.theme-light.checked .slider {
+  background-color: var(--color-gray-80);
+}
+
+.toggle.variant-tertiary.theme-light:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-20);
+}
+
+.toggle.variant-tertiary.theme-light.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-70);
+}
+
+.toggle.variant-tertiary.theme-light .label {
+  color: var(--color-text-primary);
+}
+
+/* Tertiary - Dark Theme */
+.toggle.variant-tertiary.theme-dark .slider {
+  background-color: var(--color-gray-70);
+}
+
+.toggle.variant-tertiary.theme-dark.checked .slider {
+  background-color: var(--color-gray-20);
+}
+
+.toggle.variant-tertiary.theme-dark:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-60);
+}
+
+.toggle.variant-tertiary.theme-dark.checked:hover:not(.disabled) .slider {
+  background-color: var(--color-gray-30);
+}
+
+.toggle.variant-tertiary.theme-dark .label {
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   DISABLED STATE
+   ======================================== */
+
+.toggle.disabled,
+.toggle.disabled .slider {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.toggle.disabled:hover .slider {
+  background-color: inherit !important;
+  border-color: inherit !important;
+}
+
+.toggle.disabled .thumb {
+  box-shadow: none;
+}
+
+/* ========================================
+   FOCUS STATE (접근성)
+   ======================================== */
+
+.toggle:focus-within .slider {
+  outline: 3px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.toggle.theme-dark:focus-within .slider {
+  outline-color: var(--color-blue-60);
+}
+
+/* ========================================
+   CHECKED STATE ANIMATIONS
+   ======================================== */
+
+.toggle.checked .slider {
+  background-color: var(--color-primary);
+}
+
+.toggle.checked .thumb {
+  background-color: var(--color-gray-white);
+}
+
+/* ========================================
+   LABEL POSITIONING
+   ======================================== */
+
+.wrapper .label.label-left {
+  order: -1;
+}
+
+.wrapper .label.label-right {
+  order: 1;
+}
+
+/* ========================================
+   RESPONSIVE (모바일)
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Small Size - 모바일 */
+  .toggle.size-small .slider {
+    width: 32px;
+    height: 18px;
+  }
+
+  .toggle.size-small .thumb {
+    width: 14px;
+    height: 14px;
+  }
+
+  .toggle.size-small.checked .slider {
+    justify-content: flex-end;
+  }
+
+  /* Medium Size - 모바일 */
+  .toggle.size-medium .slider {
+    width: 40px;
+    height: 22px;
+  }
+
+  .toggle.size-medium .thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .toggle.size-medium.checked .slider {
+    justify-content: flex-end;
+  }
+
+  /* Large Size - 모바일 */
+  .toggle.size-large .slider {
+    width: 48px;
+    height: 26px;
+  }
+
+  .toggle.size-large .thumb {
+    width: 22px;
+    height: 22px;
+  }
+
+  .toggle.size-large.checked .slider {
+    justify-content: flex-end;
+  }
+
+  /* Label 크기 조정 */
+  .toggle.size-small + .label,
+  .label.size-small {
+    font-size: 12px;
+  }
+
+  .toggle.size-medium + .label,
+  .label.size-medium {
+    font-size: 14px;
+  }
+
+  .toggle.size-large + .label,
+  .label.size-large {
+    font-size: 16px;
+  }
+
+  /* Wrapper gap 조정 */
+  .wrapper {
+    gap: 8px;
+  }
+}
+
+/* ========================================
+   HIGH CONTRAST MODE (접근성)
+   ======================================== */
+
+@media (prefers-contrast: high) {
+  .toggle .slider {
+    border: 2px solid currentColor;
+  }
+
+  .toggle.checked .slider {
+    background-color: currentColor;
+  }
+
+  .toggle .thumb {
+    border: 1px solid currentColor;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION (접근성)
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* 애니메이션 없음 - 커서룰 준수 */
+}
