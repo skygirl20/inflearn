@@ -1,0 +1,527 @@
+/**
+ * Input Component Styles
+ * Figma 디자인 기반 입력 필드 스타일 (노드 ID: 3:1297)
+ */
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container.fullWidth {
+  width: 100%;
+}
+
+/* Label Styles */
+.label {
+  /* Typography - Figma 기준 */
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.label.required .requiredMark {
+  color: #F03851; /* red[30] - Error color */
+  margin-left: 2px;
+}
+
+/* Label Size Variants */
+.label.label-size-small {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.label.label-size-medium {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.label.label-size-large {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Label Theme Variants */
+.label.label-theme-light {
+  color: #000000; /* gray.black */
+}
+
+.label.label-theme-dark {
+  color: #F2F2F2; /* gray[5] */
+}
+
+.label.disabled {
+  color: #ABABAB; /* gray[40] */
+  opacity: 0.5;
+}
+
+/* Base Input Styles */
+.input {
+  /* Layout */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  
+  /* Typography - Figma 기준 */
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  
+  /* Border & Effects */
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  
+  /* Misc */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input.fullWidth {
+  width: 100%;
+}
+
+/* Placeholder Styles */
+.input::placeholder {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* ========================================
+   SIZE VARIANTS - Figma 기준 (48px height = medium)
+   ======================================== */
+
+/* Small Size */
+.input.size-small {
+  height: 36px;
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 6px;
+}
+
+/* Medium Size - Figma 디자인 기준 (1101x48px) */
+.input.size-medium {
+  height: 48px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px;
+}
+
+/* Large Size */
+.input.size-large {
+  height: 56px;
+  padding: 16px 20px;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 10px;
+}
+
+/* ========================================
+   VARIANT: PRIMARY
+   ======================================== */
+
+/* Primary - Light Theme - Figma 기준 (흰색 배경, #D4D3D3 테두리) */
+.input.variant-primary.theme-light {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid #D4D3D3; /* gray[20] */
+}
+
+.input.variant-primary.theme-light::placeholder {
+  color: #ABABAB; /* gray[40] */
+}
+
+.input.variant-primary.theme-light:hover:not(:disabled):not(:focus) {
+  border-color: #C7C7C7; /* gray[30] */
+}
+
+.input.variant-primary.theme-light:focus {
+  border-color: #6DA5FA; /* blue[40] */
+  box-shadow: 0 0 0 3px rgba(109, 165, 250, 0.1);
+}
+
+/* Primary - Dark Theme */
+.input.variant-primary.theme-dark {
+  background-color: #1C1C1C; /* gray[90] */
+  color: #F2F2F2; /* gray[5] */
+  border: 1px solid #5F5F5F; /* gray[70] */
+}
+
+.input.variant-primary.theme-dark::placeholder {
+  color: #777777; /* gray[60] */
+}
+
+.input.variant-primary.theme-dark:hover:not(:disabled):not(:focus) {
+  border-color: #777777; /* gray[60] */
+}
+
+.input.variant-primary.theme-dark:focus {
+  border-color: #3A5CF3; /* blue[60] */
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.15);
+}
+
+/* ========================================
+   VARIANT: SECONDARY
+   ======================================== */
+
+/* Secondary - Light Theme */
+.input.variant-secondary.theme-light {
+  background-color: #F2F2F2; /* gray[5] */
+  color: #000000;
+  border: 1px solid #E4E4E4; /* gray[10] */
+}
+
+.input.variant-secondary.theme-light::placeholder {
+  color: #919191; /* gray[50] */
+}
+
+.input.variant-secondary.theme-light:hover:not(:disabled):not(:focus) {
+  background-color: #E4E4E4; /* gray[10] */
+  border-color: #D4D3D3; /* gray[20] */
+}
+
+.input.variant-secondary.theme-light:focus {
+  background-color: #FFFFFF;
+  border-color: #6DA5FA; /* blue[40] */
+  box-shadow: 0 0 0 3px rgba(109, 165, 250, 0.1);
+}
+
+/* Secondary - Dark Theme */
+.input.variant-secondary.theme-dark {
+  background-color: #333333; /* gray[80] */
+  color: #F2F2F2; /* gray[5] */
+  border: 1px solid #333333; /* gray[80] */
+}
+
+.input.variant-secondary.theme-dark::placeholder {
+  color: #777777; /* gray[60] */
+}
+
+.input.variant-secondary.theme-dark:hover:not(:disabled):not(:focus) {
+  background-color: #1C1C1C; /* gray[90] */
+  border-color: #5F5F5F; /* gray[70] */
+}
+
+.input.variant-secondary.theme-dark:focus {
+  background-color: #000000;
+  border-color: #3A5CF3; /* blue[60] */
+  box-shadow: 0 0 0 3px rgba(58, 92, 243, 0.15);
+}
+
+/* ========================================
+   VARIANT: TERTIARY (미니멀 스타일)
+   ======================================== */
+
+/* Tertiary - Light Theme */
+.input.variant-tertiary.theme-light {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  border-bottom: 1px solid #D4D3D3; /* gray[20] */
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input.variant-tertiary.theme-light::placeholder {
+  color: #ABABAB; /* gray[40] */
+}
+
+.input.variant-tertiary.theme-light:hover:not(:disabled):not(:focus) {
+  border-bottom-color: #919191; /* gray[50] */
+}
+
+.input.variant-tertiary.theme-light:focus {
+  border-bottom-color: #6DA5FA; /* blue[40] */
+  box-shadow: 0 1px 0 0 #6DA5FA;
+}
+
+/* Tertiary - Dark Theme */
+.input.variant-tertiary.theme-dark {
+  background-color: transparent;
+  color: #F2F2F2; /* gray[5] */
+  border: none;
+  border-bottom: 1px solid #5F5F5F; /* gray[70] */
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input.variant-tertiary.theme-dark::placeholder {
+  color: #777777; /* gray[60] */
+}
+
+.input.variant-tertiary.theme-dark:hover:not(:disabled):not(:focus) {
+  border-bottom-color: #919191; /* gray[50] */
+}
+
+.input.variant-tertiary.theme-dark:focus {
+  border-bottom-color: #3A5CF3; /* blue[60] */
+  box-shadow: 0 1px 0 0 #3A5CF3;
+}
+
+/* ========================================
+   ERROR STATE
+   ======================================== */
+
+.input.error.theme-light {
+  border-color: #F03851; /* red[30] */
+}
+
+.input.error.theme-light:hover {
+  border-color: #F03851;
+}
+
+.input.error.theme-light:focus {
+  border-color: #F03851;
+  box-shadow: 0 0 0 3px rgba(240, 56, 81, 0.1);
+}
+
+.input.error.theme-dark {
+  border-color: #F4677A; /* red[20] */
+}
+
+.input.error.theme-dark:hover {
+  border-color: #F4677A;
+}
+
+.input.error.theme-dark:focus {
+  border-color: #F4677A;
+  box-shadow: 0 0 0 3px rgba(244, 103, 122, 0.15);
+}
+
+/* Tertiary Error State */
+.input.variant-tertiary.error.theme-light {
+  border-bottom-color: #F03851;
+}
+
+.input.variant-tertiary.error.theme-light:hover {
+  border-bottom-color: #F03851;
+}
+
+.input.variant-tertiary.error.theme-light:focus {
+  border-bottom-color: #F03851;
+  box-shadow: 0 1px 0 0 #F03851;
+}
+
+.input.variant-tertiary.error.theme-dark {
+  border-bottom-color: #F4677A;
+}
+
+.input.variant-tertiary.error.theme-dark:hover {
+  border-bottom-color: #F4677A;
+}
+
+.input.variant-tertiary.error.theme-dark:focus {
+  border-bottom-color: #F4677A;
+  box-shadow: 0 1px 0 0 #F4677A;
+}
+
+/* ========================================
+   DISABLED STATE
+   ======================================== */
+
+.input.disabled,
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Primary Disabled */
+.input.variant-primary.disabled,
+.input.variant-primary:disabled {
+  background-color: #F2F2F2; /* gray[5] */
+  border-color: #E4E4E4; /* gray[10] */
+  color: #ABABAB; /* gray[40] */
+}
+
+.input.variant-primary.theme-dark.disabled,
+.input.variant-primary.theme-dark:disabled {
+  background-color: #333333; /* gray[80] */
+  border-color: #5F5F5F; /* gray[70] */
+  color: #777777; /* gray[60] */
+}
+
+/* Secondary Disabled */
+.input.variant-secondary.disabled,
+.input.variant-secondary:disabled {
+  background-color: #E4E4E4; /* gray[10] */
+  border-color: #D4D3D3; /* gray[20] */
+  color: #ABABAB; /* gray[40] */
+}
+
+.input.variant-secondary.theme-dark.disabled,
+.input.variant-secondary.theme-dark:disabled {
+  background-color: #1C1C1C; /* gray[90] */
+  border-color: #333333; /* gray[80] */
+  color: #777777; /* gray[60] */
+}
+
+/* Tertiary Disabled */
+.input.variant-tertiary.disabled,
+.input.variant-tertiary:disabled {
+  border-bottom-color: #D4D3D3; /* gray[20] */
+  color: #ABABAB; /* gray[40] */
+}
+
+.input.variant-tertiary.theme-dark.disabled,
+.input.variant-tertiary.theme-dark:disabled {
+  border-bottom-color: #5F5F5F; /* gray[70] */
+  color: #777777; /* gray[60] */
+}
+
+/* ========================================
+   HELPER TEXT & ERROR MESSAGE
+   ======================================== */
+
+.helperText {
+  display: block;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.helperText.helper-size-small {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.helperText.helper-size-medium {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.helperText.helper-size-large {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.helperText.helper-theme-light {
+  color: #777777; /* gray[60] */
+}
+
+.helperText.helper-theme-dark {
+  color: #919191; /* gray[50] */
+}
+
+.helperText.error {
+  color: #F03851; /* red[30] */
+}
+
+.helperText.error.helper-theme-dark {
+  color: #F4677A; /* red[20] */
+}
+
+/* ========================================
+   FOCUS STATE (접근성)
+   ======================================== */
+
+.input:focus-visible {
+  outline: none;
+}
+
+/* ========================================
+   RESPONSIVE (모바일)
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Small Size - 모바일 */
+  .input.size-small {
+    height: 32px;
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* Medium Size - 모바일 */
+  .input.size-medium {
+    height: 44px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Large Size - 모바일 */
+  .input.size-large {
+    height: 52px;
+    padding: 14px 18px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  /* Label Size - 모바일 */
+  .label.label-size-small {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .label.label-size-medium {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .label.label-size-large {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Helper Text Size - 모바일 */
+  .helperText.helper-size-small {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .helperText.helper-size-medium {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .helperText.helper-size-large {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/* ========================================
+   AUTOFILL 스타일 (브라우저 자동완성)
+   ======================================== */
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Light Theme Autofill */
+.input.theme-light:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+}
+
+.input.variant-secondary.theme-light:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #F2F2F2 inset;
+}
+
+/* Dark Theme Autofill */
+.input.theme-dark:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #1C1C1C inset;
+  -webkit-text-fill-color: #F2F2F2;
+}
+
+.input.variant-secondary.theme-dark:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #333333 inset;
+  -webkit-text-fill-color: #F2F2F2;
+}
+

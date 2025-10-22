@@ -1,0 +1,257 @@
+/**
+ * Button Component Styles
+ * Figma 디자인 기반 버튼 스타일 (노드 ID: 3:2291)
+ */
+
+/* Base Button Styles */
+.button {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  
+  /* Typography - Figma 기준 */
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  
+  /* Border & Effects */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  
+  /* Misc */
+  white-space: nowrap;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Full Width */
+.button.fullWidth {
+  width: 100%;
+}
+
+/* ========================================
+   SIZE VARIANTS - Figma 기준 (48px height = medium)
+   ======================================== */
+
+/* Small Size */
+.button.size-small {
+  height: 36px;
+  padding: 6px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 6px;
+}
+
+/* Medium Size - Figma 디자인 기준 (104x48px) */
+.button.size-medium {
+  height: 48px;
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px;
+}
+
+/* Large Size */
+.button.size-large {
+  height: 56px;
+  padding: 16px 32px;
+  font-size: 18px;
+  line-height: 24px;
+  border-radius: 10px;
+}
+
+/* ========================================
+   VARIANT: PRIMARY
+   ======================================== */
+
+/* Primary - Light Theme */
+.button.variant-primary.theme-light {
+  background-color: #6DA5FA; /* blue[40] - System color */
+  color: #FFFFFF;
+  border: none;
+}
+
+.button.variant-primary.theme-light:hover:not(:disabled) {
+  background-color: #3A5CF3; /* blue[60] */
+}
+
+.button.variant-primary.theme-light:active:not(:disabled) {
+  background-color: #274AE1; /* blue[70] */
+}
+
+/* Primary - Dark Theme - Figma 기준 (#000000 배경) */
+.button.variant-primary.theme-dark {
+  background-color: #000000;
+  color: #F2F2F2; /* gray[5] */
+  border: none;
+}
+
+.button.variant-primary.theme-dark:hover:not(:disabled) {
+  background-color: #1C1C1C; /* gray[90] */
+}
+
+.button.variant-primary.theme-dark:active:not(:disabled) {
+  background-color: #333333; /* gray[80] */
+}
+
+/* ========================================
+   VARIANT: SECONDARY
+   ======================================== */
+
+/* Secondary - Light Theme */
+.button.variant-secondary.theme-light {
+  background-color: transparent;
+  color: #6DA5FA; /* blue[40] */
+  border: 2px solid #6DA5FA;
+}
+
+.button.variant-secondary.theme-light:hover:not(:disabled) {
+  background-color: #F0F7FF; /* blue[5] */
+  border-color: #3A5CF3; /* blue[60] */
+  color: #3A5CF3;
+}
+
+.button.variant-secondary.theme-light:active:not(:disabled) {
+  background-color: #DBEEFF; /* blue[10] */
+  border-color: #274AE1; /* blue[70] */
+  color: #274AE1;
+}
+
+/* Secondary - Dark Theme */
+.button.variant-secondary.theme-dark {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #5F5F5F; /* gray[70] */
+}
+
+.button.variant-secondary.theme-dark:hover:not(:disabled) {
+  background-color: #333333; /* gray[80] */
+  border-color: #777777; /* gray[60] */
+}
+
+.button.variant-secondary.theme-dark:active:not(:disabled) {
+  background-color: #1C1C1C; /* gray[90] */
+  border-color: #919191; /* gray[50] */
+}
+
+/* ========================================
+   VARIANT: TERTIARY (텍스트 버튼)
+   ======================================== */
+
+/* Tertiary - Light Theme */
+.button.variant-tertiary.theme-light {
+  background-color: transparent;
+  color: #6DA5FA; /* blue[40] */
+  border: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.button.variant-tertiary.theme-light:hover:not(:disabled) {
+  background-color: #F2F2F2; /* gray[5] */
+  color: #3A5CF3; /* blue[60] */
+}
+
+.button.variant-tertiary.theme-light:active:not(:disabled) {
+  background-color: #E4E4E4; /* gray[10] */
+  color: #274AE1; /* blue[70] */
+}
+
+/* Tertiary - Dark Theme */
+.button.variant-tertiary.theme-dark {
+  background-color: transparent;
+  color: #F2F2F2; /* gray[5] */
+  border: none;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.button.variant-tertiary.theme-dark:hover:not(:disabled) {
+  background-color: #333333; /* gray[80] */
+  color: #FFFFFF;
+}
+
+.button.variant-tertiary.theme-dark:active:not(:disabled) {
+  background-color: #1C1C1C; /* gray[90] */
+  color: #E4E4E4; /* gray[10] */
+}
+
+/* ========================================
+   DISABLED STATE
+   ======================================== */
+
+.button.disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Primary Disabled */
+.button.variant-primary.disabled,
+.button.variant-primary:disabled {
+  background-color: #D4D3D3; /* gray[20] */
+  color: #ABABAB; /* gray[40] */
+}
+
+/* Secondary Disabled */
+.button.variant-secondary.disabled,
+.button.variant-secondary:disabled {
+  background-color: transparent;
+  border-color: #D4D3D3; /* gray[20] */
+  color: #ABABAB; /* gray[40] */
+}
+
+/* Tertiary Disabled */
+.button.variant-tertiary.disabled,
+.button.variant-tertiary:disabled {
+  background-color: transparent;
+  color: #ABABAB; /* gray[40] */
+}
+
+/* ========================================
+   FOCUS STATE (접근성)
+   ======================================== */
+
+.button:focus-visible {
+  outline: 3px solid #6DA5FA;
+  outline-offset: 2px;
+}
+
+.button.theme-dark:focus-visible {
+  outline-color: #3A5CF3;
+}
+
+/* ========================================
+   RESPONSIVE (모바일)
+   ======================================== */
+
+@media (max-width: 767px) {
+  /* Small Size - 모바일 */
+  .button.size-small {
+    height: 32px;
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* Medium Size - 모바일 */
+  .button.size-medium {
+    height: 44px;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Large Size - 모바일 */
+  .button.size-large {
+    height: 52px;
+    padding: 14px 28px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
