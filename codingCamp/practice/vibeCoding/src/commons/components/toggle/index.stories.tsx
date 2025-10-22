@@ -5,6 +5,7 @@ import { Toggle } from './index';
 const meta: Meta<typeof Toggle> = {
   title: 'Commons/Components/Toggle',
   component: Toggle,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {

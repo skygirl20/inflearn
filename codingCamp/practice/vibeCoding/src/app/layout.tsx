@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { ModalProvider } from "../commons/providers/modal/modal.provider";
 import { NextThemesProvider } from "../commons/providers/next-themes/next-themes.provider";
+import Layout from "../commons/layout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,7 +33,9 @@ export default function RootLayout({
       >
         <NextThemesProvider>
           <ModalProvider>
-            {children}
+            <Layout>
+              {children}
+            </Layout>
           </ModalProvider>
         </NextThemesProvider>
       </body>

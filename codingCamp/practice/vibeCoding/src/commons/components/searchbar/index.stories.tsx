@@ -4,6 +4,7 @@ import { Searchbar } from './index';
 const meta: Meta<typeof Searchbar> = {
   title: 'Commons/Components/Searchbar',
   component: Searchbar,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {

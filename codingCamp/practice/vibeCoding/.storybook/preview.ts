@@ -9,6 +9,17 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    docs: {
+      // Docs 탭 활성화
+      page: null,
+      // 자동 문서 생성 활성화
+      extractComponentDescription: (component, { notes }) => {
+        if (notes) {
+          return typeof notes === 'string' ? notes : notes.markdown || notes.text;
+        }
+        return null;
+      },
+    },
   },
 };
 
