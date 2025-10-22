@@ -19,14 +19,14 @@
 /* Label Styles */
 .label {
   /* Typography - Figma 기준 */
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-family-korean);
   font-weight: 600;
   letter-spacing: -0.01em;
   display: block;
 }
 
 .label.required .requiredMark {
-  color: #F03851; /* red[30] - Error color */
+  color: var(--color-status-error);
   margin-left: 2px;
 }
 
@@ -48,15 +48,15 @@
 
 /* Label Theme Variants */
 .label.label-theme-light {
-  color: #000000; /* gray.black */
+  color: var(--color-text-primary);
 }
 
 .label.label-theme-dark {
-  color: #F2F2F2; /* gray[5] */
+  color: var(--color-gray-5);
 }
 
 .label.disabled {
-  color: #ABABAB; /* gray[40] */
+  color: var(--color-gray-40);
   opacity: 0.5;
 }
 
@@ -68,7 +68,7 @@
   box-sizing: border-box;
   
   /* Typography - Figma 기준 */
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-family-korean);
   font-weight: 500;
   letter-spacing: -0.01em;
   
@@ -388,7 +388,7 @@
 
 .helperText {
   display: block;
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-family-korean);
   font-weight: 400;
   letter-spacing: -0.01em;
 }

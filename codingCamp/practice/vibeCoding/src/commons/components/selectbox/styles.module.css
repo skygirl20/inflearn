@@ -1,0 +1,370 @@
+/* SelectBox Container */
+.container {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+}
+
+/* Trigger Button */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  padding: 12px 16px;
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-family-korean);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.trigger:hover:not(.disabledTrigger) {
+  border-color: var(--color-border-focus);
+}
+
+.trigger:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+/* Label */
+.label {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Arrow Icon */
+.arrow {
+  flex-shrink: 0;
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+  color: var(--color-text-secondary);
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--color-gray-20);
+  overflow: hidden;
+}
+
+
+/* Option */
+.option {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-family-korean);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.option:hover {
+  background-color: var(--color-interactive-hover);
+}
+
+.option:focus {
+  outline: none;
+  background-color: var(--color-interactive-hover);
+}
+
+.selectedOption {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.selectedOption:hover {
+  background-color: var(--color-primary);
+}
+
+/* Variant Styles */
+/* Primary */
+.primary {
+  /* 기본 스타일 사용 */
+}
+
+.primaryTrigger {
+  border-color: var(--color-border-primary);
+}
+
+.primaryTrigger:hover:not(.disabledTrigger) {
+  border-color: var(--color-border-focus);
+}
+
+.primaryDropdown {
+  border-color: var(--color-border-primary);
+}
+
+.primaryOption {
+  color: var(--color-text-primary);
+}
+
+/* Secondary */
+.secondary {
+  /* Secondary variant styles */
+}
+
+.secondaryTrigger {
+  background-color: var(--color-background-secondary);
+  border-color: var(--color-border-secondary);
+}
+
+.secondaryTrigger:hover:not(.disabledTrigger) {
+  background-color: var(--color-interactive-hover);
+  border-color: var(--color-border-focus);
+}
+
+.secondaryDropdown {
+  background-color: var(--color-background-secondary);
+  border-color: var(--color-border-secondary);
+}
+
+.secondaryOption {
+  color: var(--color-text-primary);
+}
+
+/* Tertiary */
+.tertiary {
+  /* Tertiary variant styles */
+}
+
+.tertiaryTrigger {
+  background-color: var(--color-background-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.tertiaryTrigger:hover:not(.disabledTrigger) {
+  background-color: var(--color-interactive-hover);
+  border-color: var(--color-border-focus);
+}
+
+.tertiaryDropdown {
+  background-color: var(--color-background-tertiary);
+  border-color: var(--color-border-secondary);
+}
+
+.tertiaryOption {
+  color: var(--color-text-primary);
+}
+
+/* Size Styles */
+/* Small */
+.small {
+  width: 100px;
+}
+
+.smallTrigger {
+  height: 36px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.smallDropdown {
+  /* Small dropdown styles */
+}
+
+.smallOption {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Medium (Default) */
+.medium {
+  width: 120px;
+}
+
+.mediumTrigger {
+  height: 48px;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.mediumDropdown {
+  /* Medium dropdown styles */
+}
+
+.mediumOption {
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Large */
+.large {
+  width: 160px;
+}
+
+.largeTrigger {
+  height: 56px;
+  padding: 16px 20px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.largeDropdown {
+  /* Large dropdown styles */
+}
+
+.largeOption {
+  padding: 16px 20px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Theme Styles */
+/* Light (Default) */
+.light {
+  /* Light theme styles - already defined above */
+}
+
+.lightTrigger {
+  background-color: var(--color-background-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+
+.lightDropdown {
+  background-color: var(--color-background-primary);
+  border-color: var(--color-border-primary);
+}
+
+.lightOption {
+  color: var(--color-text-primary);
+}
+
+/* Dark */
+.dark {
+  /* Dark theme styles */
+}
+
+.darkTrigger {
+  background-color: var(--color-background-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-primary);
+}
+
+.darkTrigger:hover:not(.disabledTrigger) {
+  border-color: var(--color-border-focus);
+}
+
+.darkDropdown {
+  background-color: var(--color-background-primary);
+  border-color: var(--color-border-primary);
+}
+
+.darkOption {
+  color: var(--color-text-primary);
+}
+
+/* Disabled State */
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.disabledTrigger {
+  cursor: not-allowed;
+  background-color: var(--color-interactive-disabled);
+  border-color: var(--color-border-primary);
+}
+
+.disabledTrigger:hover {
+  border-color: var(--color-border-primary);
+}
+
+/* Open State */
+.open {
+  /* Open state styles */
+}
+
+.openTrigger {
+  border-color: var(--color-border-focus);
+}
+
+.openDropdown {
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  
+  .small {
+    width: 80px;
+  }
+  
+  .medium {
+    width: 100px;
+  }
+  
+  .large {
+    width: 120px;
+  }
+}
+
+/* Focus Management */
+.trigger:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: -2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .trigger {
+    border-width: 2px;
+  }
+  
+  .dropdown {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .trigger,
+  .arrow,
+  .option {
+    transition: none;
+  }
+  
+  .dropdown {
+    animation: none;
+  }
+}

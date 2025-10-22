@@ -12,7 +12,7 @@
   gap: 8px;
   
   /* Typography - Figma 기준 */
-  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: var(--font-family-korean);
   font-weight: 600;
   letter-spacing: -0.01em;
   
@@ -69,32 +69,32 @@
 
 /* Primary - Light Theme */
 .button.variant-primary.theme-light {
-  background-color: #6DA5FA; /* blue[40] - System color */
-  color: #FFFFFF;
+  background-color: var(--color-primary);
+  color: var(--color-gray-white);
   border: none;
 }
 
 .button.variant-primary.theme-light:hover:not(:disabled) {
-  background-color: #3A5CF3; /* blue[60] */
+  background-color: var(--color-blue-60);
 }
 
 .button.variant-primary.theme-light:active:not(:disabled) {
-  background-color: #274AE1; /* blue[70] */
+  background-color: var(--color-blue-70);
 }
 
 /* Primary - Dark Theme - Figma 기준 (#000000 배경) */
 .button.variant-primary.theme-dark {
-  background-color: #000000;
-  color: #F2F2F2; /* gray[5] */
+  background-color: var(--color-gray-black);
+  color: var(--color-gray-5);
   border: none;
 }
 
 .button.variant-primary.theme-dark:hover:not(:disabled) {
-  background-color: #1C1C1C; /* gray[90] */
+  background-color: var(--color-gray-90);
 }
 
 .button.variant-primary.theme-dark:active:not(:disabled) {
-  background-color: #333333; /* gray[80] */
+  background-color: var(--color-gray-80);
 }
 
 /* ========================================

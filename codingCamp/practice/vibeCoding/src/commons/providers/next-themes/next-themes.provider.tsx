@@ -20,3 +20,5 @@ export function NextThemesProvider({ children }: NextThemesProviderProps) {
     </ThemeProvider>
   );
 }
+
+
