@@ -4,6 +4,7 @@ import SelectBox from './index';
 const meta: Meta<typeof SelectBox> = {
   title: 'Commons/Components/SelectBox',
   component: SelectBox,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {
@@ -556,6 +557,78 @@ export const EmptyOptions: Story = {
     docs: {
       description: {
         story: '옵션이 없는 경우의 셀렉트박스 동작을 확인할 수 있습니다.',
+      },
+    },
+  },
+};
+
+// Long Text Options (width 조정 테스트)
+export const LongTextOptions: Story = {
+  args: {
+    options: [
+      { value: 'very-long-option-1', label: '매우 긴 텍스트를 가진 첫 번째 옵션입니다' },
+      { value: 'very-long-option-2', label: '이것은 두 번째로 긴 텍스트 옵션입니다' },
+      { value: 'very-long-option-3', label: '세 번째 옵션도 상당히 긴 텍스트를 가지고 있습니다' },
+      { value: 'short', label: '짧은 옵션' },
+    ],
+    placeholder: '긴 텍스트가 잘리지 않는지 확인하세요',
+    defaultValue: 'very-long-option-1',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: '긴 텍스트가 잘리지 않고 전체 표시되는지 확인할 수 있습니다. width가 자동으로 조정됩니다.',
+      },
+    },
+  },
+};
+
+// Size Comparison with Long Text
+export const SizeComparisonWithLongText: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Small</h4>
+        <SelectBox
+          size="small"
+          options={[
+            { value: '1', label: '긴 텍스트 옵션 1번' },
+            { value: '2', label: '긴 텍스트 옵션 2번' },
+          ]}
+          placeholder="Small 사이즈 긴 텍스트"
+          defaultValue="1"
+        />
+      </div>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Medium</h4>
+        <SelectBox
+          size="medium"
+          options={[
+            { value: '1', label: '긴 텍스트 옵션 1번' },
+            { value: '2', label: '긴 텍스트 옵션 2번' },
+          ]}
+          placeholder="Medium 사이즈 긴 텍스트"
+          defaultValue="1"
+        />
+      </div>
+      <div>
+        <h4 style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>Large</h4>
+        <SelectBox
+          size="large"
+          options={[
+            { value: '1', label: '긴 텍스트 옵션 1번' },
+            { value: '2', label: '긴 텍스트 옵션 2번' },
+          ]}
+          placeholder="Large 사이즈 긴 텍스트"
+          defaultValue="1"
+        />
+      </div>
+    </div>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story: '각 사이즈별로 긴 텍스트가 어떻게 표시되는지 비교할 수 있습니다.',
       },
     },
   },
