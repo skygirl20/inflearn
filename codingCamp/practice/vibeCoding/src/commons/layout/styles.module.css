@@ -13,7 +13,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -31,22 +31,9 @@
   font-size: var(--typography-title-title01-font-size);
   line-height: var(--typography-title-title01-line-height);
   color: var(--color-gray-black);
+  white-space: nowrap;
 }
 
-.darkModeToggle {
-  display: flex;
-  align-items: center;
-  width: 55px;
-  height: 24px;
-}
-
-.darkModeText {
-  font-family: var(--typography-body-body01-regular-font-family);
-  font-weight: var(--typography-body-body01-regular-font-weight);
-  font-size: var(--typography-body-body01-regular-font-size);
-  line-height: var(--typography-body-body01-regular-line-height);
-  color: var(--color-gray-90);
-}
 
 /* Gap */
 .gap {
@@ -107,11 +94,13 @@
   font-size: var(--typography-headline-headline01-font-size);
   line-height: var(--typography-headline-headline01-line-height);
   color: var(--color-gray-60);
+  white-space: nowrap;
 }
 
 .tabActive .tabText {
   font-weight: var(--typography-headline-headline01-font-weight);
   color: var(--color-gray-black);
+  white-space: nowrap;
 }
 
 /* Children Content */
@@ -148,6 +137,7 @@
   font-size: 20px;
   line-height: 16px;
   color: var(--color-gray-black);
+  white-space: nowrap;
 }
 
 .footerInfo {
@@ -156,6 +146,7 @@
   font-size: var(--typography-body-body02-regular-font-size);
   line-height: 16px;
   color: var(--color-gray-70);
+  white-space: nowrap;
 }
 
 .footerCopyright {
@@ -164,5 +155,6 @@
   font-size: var(--typography-body-body02-regular-font-size);
   line-height: 16px;
   color: var(--color-gray-50);
+  white-space: nowrap;
 }
 

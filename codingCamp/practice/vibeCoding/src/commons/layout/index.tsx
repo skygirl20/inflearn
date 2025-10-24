@@ -12,9 +12,6 @@ export default function Layout({ children }: LayoutProps) {
         <div className={styles.logo}>
           <span className={styles.logoText}>민지의 다이어리</span>
         </div>
-        <div className={styles.darkModeToggle}>
-          <span className={styles.darkModeText}>다크모드</span>
-        </div>
       </header>
       
       <div className={styles.gap}></div>
