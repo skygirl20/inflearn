@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1168px;
+  margin: 0 auto;
+}
+
+/* 첫 번째 gap: 1168px * 32px */
+.search {
+  width: 1168px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  margin-bottom: 32px;
+}
+
+.searchContent {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 두 번째 gap: 1168px * 42px */
+.main {
+  width: 1168px;
+  height: 936px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 42px;
+}
+
+.mainContent {
+  font-size: 16px;
+  color: #333;
+}
+
+/* 세 번째 gap: 1168px * 40px */
+.pagination {
+  width: 1168px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.paginationContent {
+  font-size: 14px;
+  color: #666;
+}
