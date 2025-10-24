@@ -3,55 +3,296 @@
   flex-direction: column;
   width: 1168px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
-/* 첫 번째 gap: 1168px * 32px */
+/* Search 영역 */
 .search {
-  width: 1168px;
+  width: 100%;
   height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
   margin-bottom: 32px;
 }
 
 .searchContent {
-  font-size: 14px;
-  color: #666;
-}
-
-/* 두 번째 gap: 1168px * 42px */
-.main {
-  width: 1168px;
-  height: 936px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.searchLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.searchRight {
+  display: flex;
+  align-items: center;
+}
+
+.filterSelect {
+  width: 120px;
+}
+
+.searchInput {
+  width: 320px;
+}
+
+.writeButton {
+  width: 110px;
+}
+
+/* Main 영역 */
+.main {
+  width: 100%;
+  min-height: 936px;
   margin-bottom: 42px;
 }
 
 .mainContent {
-  font-size: 16px;
-  color: #333;
+  width: 100%;
+  padding: 24px;
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 8px;
 }
 
-/* 세 번째 gap: 1168px * 40px */
-.pagination {
-  width: 1168px;
-  height: 32px;
+.diaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.diaryCard {
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.diaryCard:hover {
+  border-color: var(--color-border-focus);
+}
+
+.diaryHeader {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.diaryTitle {
+  font-family: var(--font-family-korean);
+  font-size: var(--typography-title-title02-font-size);
+  font-weight: var(--typography-title-title02-font-weight);
+  line-height: var(--typography-title-title02-line-height);
+  color: var(--color-text-primary);
+  margin: 0;
+  flex: 1;
+  margin-right: 12px;
+}
+
+.diaryDate {
+  font-family: var(--font-family-korean);
+  font-size: var(--typography-body-body03-font-size);
+  font-weight: var(--typography-body-body03-font-weight);
+  line-height: var(--typography-body-body03-line-height);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+
+.diaryEmotion {
+  display: flex;
   justify-content: center;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+.emotionIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.diaryContent {
+  font-family: var(--font-family-korean);
+  font-size: var(--typography-body-body02-font-size);
+  font-weight: var(--typography-body-body02-font-weight);
+  line-height: var(--typography-body-body02-line-height);
+  color: var(--color-text-secondary);
+}
+
+.diaryContent p {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Pagination 영역 */
+.pagination {
+  width: 100%;
+  height: 32px;
   margin-bottom: 40px;
 }
 
 .paginationContent {
-  font-size: 14px;
-  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: var(--color-interactive-hover);
+  border-color: var(--color-border-focus);
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationButton img {
+  width: 16px;
+  height: 16px;
+}
+
+.paginationNumbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 16px;
+}
+
+.pageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: 6px;
+  font-family: var(--font-family-korean);
+  font-size: var(--typography-body-body02-font-size);
+  font-weight: var(--typography-body-body02-font-weight);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.pageButton:hover {
+  background-color: var(--color-interactive-hover);
+  border-color: var(--color-border-focus);
+}
+
+.pageButton.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-background-primary);
+}
+
+.pageButton.active:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+    max-width: 1168px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .searchContent {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .searchLeft {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .searchRight {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .filterSelect {
+    width: 100%;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+  
+  .writeButton {
+    width: 100%;
+  }
+  
+  .diaryGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .diaryCard {
+    padding: 16px;
+  }
+  
+  .diaryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .diaryTitle {
+    font-size: var(--typography-title-title03-font-size);
+    line-height: var(--typography-title-title03-line-height);
+  }
+  
+  .diaryDate {
+    font-size: var(--typography-caption-caption01-font-size);
+    line-height: var(--typography-caption-caption01-line-height);
+  }
+  
+  .paginationNumbers {
+    margin: 0 8px;
+  }
+  
+  .pageButton {
+    min-width: 28px;
+    height: 28px;
+    font-size: var(--typography-caption-caption01-font-size);
+  }
 }
