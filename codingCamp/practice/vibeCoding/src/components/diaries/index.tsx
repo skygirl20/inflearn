@@ -75,6 +75,7 @@ const Diaries = () => {
               onClick={handleWriteDiary}
               className={styles.writeButton}
             >
+              <img src="/icons/plus_outline_light_m.svg" alt="플러스" className={styles.plusIcon} />
               일기 쓰기
             </Button>
           </div>

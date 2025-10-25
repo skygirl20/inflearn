@@ -45,6 +45,25 @@
 
 .writeButton {
   width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-text-primary) !important;
+  border-color: var(--color-text-primary) !important;
+  color: var(--color-background-primary) !important;
+}
+
+.writeButton:hover {
+  background-color: var(--color-text-secondary) !important;
+  border-color: var(--color-text-secondary) !important;
+  color: var(--color-background-primary) !important;
+}
+
+.plusIcon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
 }
 
 /* Main 영역 */
