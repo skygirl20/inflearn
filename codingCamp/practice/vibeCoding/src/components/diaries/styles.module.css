@@ -76,43 +76,76 @@
 .mainContent {
   width: 100%;
   background-color: var(--color-background-primary);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 8px;
 }
 
 .diaryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .diaryCard {
   background-color: var(--color-background-primary);
-  border: 1px solid var(--color-border-secondary);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 16px;
+  padding: 0;
   cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .diaryCard:hover {
   border-color: var(--color-border-focus);
 }
 
+.diaryImage {
+  width: 100%;
+  height: 208px;
+  overflow: hidden;
+}
+
+.emotionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.diaryInfo {
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .diaryHeader {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.emotionText {
+  font-family: var(--font-family-korean);
+  font-size: var(--typography-body-body02-font-size);
+  font-weight: 600;
+  line-height: var(--typography-body-body02-line-height);
 }
 
 .diaryTitle {
   font-family: var(--font-family-korean);
-  font-size: var(--typography-title-title02-font-size);
-  font-weight: var(--typography-title-title02-font-weight);
-  line-height: var(--typography-title-title02-line-height);
+  font-size: var(--typography-title-title01-font-size);
+  font-weight: var(--typography-title-title01-font-weight);
+  line-height: var(--typography-title-title01-line-height);
   color: var(--color-text-primary);
   margin: 0;
-  flex: 1;
-  margin-right: 12px;
+}
+
+.diaryTitle h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 .diaryDate {
@@ -124,34 +157,7 @@
   white-space: nowrap;
 }
 
-.diaryEmotion {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
 
-.emotionIcon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-}
-
-.diaryContent {
-  font-family: var(--font-family-korean);
-  font-size: var(--typography-body-body02-font-size);
-  font-weight: var(--typography-body-body02-font-weight);
-  line-height: var(--typography-body-body02-line-height);
-  color: var(--color-text-secondary);
-}
-
-.diaryContent p {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 /* Pagination 영역 */
 .pagination {

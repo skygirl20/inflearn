@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import SelectBox from '../../commons/components/selectbox';
 import Searchbar from '../../commons/components/searchbar';
 import Button from '../../commons/components/button';
+import { EmotionType, EMOTION_INFO } from '../../commons/constants/enum';
 
 const Diaries = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('');
@@ -18,14 +19,20 @@ const Diaries = () => {
     { value: 'emotion', label: '감정별' },
   ];
 
-  // 일기 데이터 (임시)
+  // 일기 데이터 (enum 타입 활용)
   const diaryData = [
-    { id: 1, title: '오늘의 기분', date: '2024-01-15', emotion: 'happy', content: '오늘은 정말 좋은 하루였다...' },
-    { id: 2, title: '힘든 하루', date: '2024-01-14', emotion: 'sad', content: '오늘은 조금 힘들었지만...' },
-    { id: 3, title: '놀라운 일', date: '2024-01-13', emotion: 'surprise', content: '예상치 못한 일이...' },
-    { id: 4, title: '화나는 순간', date: '2024-01-12', emotion: 'angry', content: '오늘 정말 화가 났다...' },
-    { id: 5, title: '평범한 하루', date: '2024-01-11', emotion: 'etc', content: '특별한 일은 없었지만...' },
-    { id: 6, title: '기쁜 소식', date: '2024-01-10', emotion: 'happy', content: '정말 기쁜 소식이...' },
+    { id: 1, title: '타이틀 영역 입니다. 한줄까지만 노출 됩니다.', date: '2024. 03. 12', emotion: EmotionType.SAD, content: '오늘은 조금 힘들었지만...' },
+    { id: 2, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.SURPRISE, content: '예상치 못한 일이...' },
+    { id: 3, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.ANGRY, content: '오늘 정말 화가 났다...' },
+    { id: 4, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.HAPPY, content: '정말 기쁜 소식이...' },
+    { id: 5, title: '타이틀 영역 입니다. 한줄까지만 노출 됩니다.', date: '2024. 03. 12', emotion: EmotionType.ETC, content: '특별한 일은 없었지만...' },
+    { id: 6, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.SURPRISE, content: '놀라운 일이...' },
+    { id: 7, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.ANGRY, content: '화나는 순간이...' },
+    { id: 8, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.HAPPY, content: '행복한 하루였다...' },
+    { id: 9, title: '타이틀 영역 입니다. 한줄까지만 노출 됩니다.', date: '2024. 03. 12', emotion: EmotionType.SAD, content: '슬픈 하루였다...' },
+    { id: 10, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.SURPRISE, content: '놀라운 소식이...' },
+    { id: 11, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.ANGRY, content: '화나는 일이...' },
+    { id: 12, title: '타이틀 영역 입니다.', date: '2024. 03. 12', emotion: EmotionType.HAPPY, content: '기쁜 하루였다...' },
   ];
 
   const handleFilterChange = (value: string) => {
@@ -86,24 +93,31 @@ const Diaries = () => {
       <div className={styles.main}>
         <div className={styles.mainContent}>
           <div className={styles.diaryGrid}>
-            {diaryData.map((diary) => (
-              <div key={diary.id} className={styles.diaryCard}>
-                <div className={styles.diaryHeader}>
-                  <h3 className={styles.diaryTitle}>{diary.title}</h3>
-                  <span className={styles.diaryDate}>{diary.date}</span>
+            {diaryData.map((diary) => {
+              const emotionInfo = EMOTION_INFO[diary.emotion];
+              return (
+                <div key={diary.id} className={styles.diaryCard}>
+                  <div className={styles.diaryImage}>
+                    <img 
+                      src={`/images/emotion-${diary.emotion.toLowerCase()}-m.png`} 
+                      alt={emotionInfo.label}
+                      className={styles.emotionImage}
+                    />
+                  </div>
+                  <div className={styles.diaryInfo}>
+                    <div className={styles.diaryHeader}>
+                      <span className={styles.emotionText} style={{ color: emotionInfo.color }}>
+                        {emotionInfo.label}
+                      </span>
+                      <span className={styles.diaryDate}>{diary.date}</span>
+                    </div>
+                    <div className={styles.diaryTitle}>
+                      <h3>{diary.title}</h3>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.diaryEmotion}>
-                  <img 
-                    src={`/images/emotion-${diary.emotion}-m.png`} 
-                    alt={diary.emotion}
-                    className={styles.emotionIcon}
-                  />
-                </div>
-                <div className={styles.diaryContent}>
-                  <p>{diary.content}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
