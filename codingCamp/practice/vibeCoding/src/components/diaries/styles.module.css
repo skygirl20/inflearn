@@ -3,14 +3,14 @@
   flex-direction: column;
   width: 1168px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 32px 0 0 0;
 }
 
 /* Search 영역 */
 .search {
   width: 100%;
   height: 48px;
-  margin-bottom: 32px;
+  margin-bottom: 42px;
 }
 
 .searchContent {
@@ -69,13 +69,12 @@
 /* Main 영역 */
 .main {
   width: 100%;
-  min-height: 936px;
-  margin-bottom: 42px;
+  height: 936px;
+  margin-bottom: 40px;
 }
 
 .mainContent {
   width: 100%;
-  padding: 24px;
   background-color: var(--color-background-primary);
   border: 1px solid var(--color-border-primary);
   border-radius: 8px;
@@ -84,7 +83,6 @@
 .diaryGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 24px;
 }
 
 .diaryCard {
