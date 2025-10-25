@@ -69,7 +69,7 @@
 
 /* Primary - Light Theme */
 .button.variant-primary.theme-light {
-  background-color: var(--color-primary);
+  background-color: var(--color-gray-black);
   color: var(--color-gray-white);
   border: none;
 }

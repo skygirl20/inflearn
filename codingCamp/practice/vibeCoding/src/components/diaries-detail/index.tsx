@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './styles.module.css';
 import { Button } from '../../commons/components/button';
+import { Input } from '../../commons/components/input';
 import { EmotionType, EMOTION_INFO } from '../../commons/constants/enum';
 
 interface DiariesDetailProps {
@@ -113,7 +114,24 @@ const DiariesDetail: React.FC<DiariesDetailProps> = ({
       
       {/* Retrospect Input Section */}
       <div className={styles.retrospectInput}>
-        <textarea placeholder="회고를 작성해보세요..."></textarea>
+        <div className={styles.retrospectLabel}>회고</div>
+        <div className={styles.retrospectInputContainer}>
+          <Input
+            variant="primary"
+            size="medium"
+            theme="light"
+            placeholder="회고를 남겨보세요."
+            className={styles.retrospectInputField}
+          />
+          <Button
+            variant="primary"
+            size="medium"
+            theme="light"
+            className={styles.retrospectSubmitButton}
+          >
+            입력
+          </Button>
+        </div>
       </div>
       
       {/* Gap 16px */}
@@ -122,10 +140,12 @@ const DiariesDetail: React.FC<DiariesDetailProps> = ({
       {/* Retrospect List Section */}
       <div className={styles.retrospectList}>
         <div className={styles.retrospectItem}>
-          <span>회고 항목 1</span>
+          <span className={styles.retrospectText}>3년이 지나고 다시 보니 이때가 그립다.</span>
+          <span className={styles.retrospectDate}>[2024. 09. 24]</span>
         </div>
         <div className={styles.retrospectItem}>
-          <span>회고 항목 2</span>
+          <span className={styles.retrospectText}>3년이 지나고 다시 보니 이때가 그립다.</span>
+          <span className={styles.retrospectDate}>[2024. 09. 24]</span>
         </div>
       </div>
     </div>
