@@ -10,7 +10,7 @@
 
 ==============================================
 
-조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: bl8ux5vl)
+조건-피그마) 활용할MCP: CursorTalkToFigmaMCP(채널명: 9eryy19y)
 조건-피그마) 구현될 컴포넌트 노드ID(main 영역): 3:1575
 
 조건-파일경로) 구현될 TSX 파일경로: src/components/diaries/index.tsx
@@ -38,13 +38,21 @@
 
 기존히스토리-참고만) styles_mainContent의 border 제거할 것.
 
-==============================================
-
 기존히스토리-참고만) style_cardHearder의 margin-bottom이 피그마처럼 gap 8정도만 되게 할 것.
 
+기존히스토리-참고만) styles_diaryInfo__TRqke의의 양옆 여백을 8px로 줄일 것.
+
+기존히스토리-참고만) styles_cardImage의 border-radius를 16px 16px 16px 16px로 통일할 것.
+
+기존히스토리-참고만) styles_diary의 X버튼이 제대로 위치하도록 할 것.
+
 ==============================================
 
-핵심요구사항) styles_diaryInfo__TRqke의의 양옆 여백을 8px로 줄일 것.
+핵심요구사항) styles_diaryInfo의 gap을 없앨 것.
+
+핵심요구사항) styles_diary의 x버튼 모양을 피그마에서 참고하여 제대로 수정할 것.
+
+==============================================
 
 핵심요구사항) 일기카드는 아래의 조건으로 Mock 데이터를 만들어 적용할 것.
             1. 일기카드는 감정과 관련된 내용으로 enum 타입을 활용할 것.

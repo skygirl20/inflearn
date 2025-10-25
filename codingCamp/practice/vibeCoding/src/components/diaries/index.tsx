@@ -104,6 +104,7 @@ const Diaries = () => {
     setCurrentPage(page);
   };
 
+
   // 페이지네이션 계산
   const itemsPerPage = 12;
   const totalPages = Math.ceil(allDiaryData.length / itemsPerPage);
@@ -168,6 +169,11 @@ const Diaries = () => {
                       alt={emotionInfo.label}
                       className={styles.emotionImage}
                     />
+                    <button className={styles.closeButton}>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.closeIcon}>
+                        <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
                   </div>
                   <div className={styles.diaryInfo}>
                     <div className={styles.diaryHeader}>
