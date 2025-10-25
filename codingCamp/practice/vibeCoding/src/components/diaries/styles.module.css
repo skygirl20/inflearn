@@ -138,6 +138,10 @@
   line-height: var(--typography-title-title01-line-height);
   color: var(--color-text-primary);
   margin: 0;
+  /* 한 줄 제한 및 말줄임표 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .diaryTitle h3 {
@@ -164,81 +168,9 @@
   width: 100%;
   height: 32px;
   margin-bottom: 40px;
-}
-
-.paginationContent {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  height: 100%;
-}
-
-.paginationButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: var(--color-background-primary);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.paginationButton:hover:not(:disabled) {
-  background-color: var(--color-interactive-hover);
-  border-color: var(--color-border-focus);
-}
-
-.paginationButton:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.paginationButton img {
-  width: 16px;
-  height: 16px;
-}
-
-.paginationNumbers {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin: 0 16px;
-}
-
-.pageButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 32px;
-  height: 32px;
-  padding: 0 8px;
-  background-color: var(--color-background-primary);
-  border: 1px solid var(--color-border-primary);
-  border-radius: 6px;
-  font-family: var(--font-family-korean);
-  font-size: var(--typography-body-body02-font-size);
-  font-weight: var(--typography-body-body02-font-weight);
-  color: var(--color-text-secondary);
-  cursor: pointer;
-}
-
-.pageButton:hover {
-  background-color: var(--color-interactive-hover);
-  border-color: var(--color-border-focus);
-}
-
-.pageButton.active {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: var(--color-background-primary);
-}
-
-.pageButton.active:hover {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
 }
 
 /* 반응형 디자인 */
@@ -309,13 +241,4 @@
     line-height: var(--typography-caption-caption01-line-height);
   }
   
-  .paginationNumbers {
-    margin: 0 8px;
-  }
-  
-  .pageButton {
-    min-width: 28px;
-    height: 28px;
-    font-size: var(--typography-caption-caption01-font-size);
-  }
 }
