@@ -46,8 +46,10 @@ export const DiariesNew: React.FC<DiariesNewProps> = ({
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
+  const isFormValid = title.trim() && content.trim();
+
   const handleSubmit = () => {
-    if (!title.trim() || !content.trim()) {
+    if (!isFormValid) {
       alert('제목과 내용을 모두 입력해주세요.');
       return;
     }
@@ -129,6 +131,7 @@ export const DiariesNew: React.FC<DiariesNewProps> = ({
           theme="light"
           size="medium"
           onClick={handleSubmit}
+          disabled={!isFormValid}
           className={styles.submitButton}
         >
           등록하기
