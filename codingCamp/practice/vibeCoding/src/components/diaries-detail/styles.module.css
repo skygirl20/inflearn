@@ -1,0 +1,340 @@
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1168px;
+  margin: 0 auto;
+}
+
+/* Detail Title Section */
+.detailTitle {
+  width: 1168px;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 16px 0;
+  background-color: transparent;
+}
+
+.titleSection {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid #000000;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: -0.22px;
+  color: #000000;
+}
+
+.emotionAndDate {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emotionSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emotionIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.emotionText {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #ea5757;
+}
+
+.dateSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dateText {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+  color: #919191;
+}
+
+.writtenText {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.14px;
+  color: #919191;
+}
+
+/* Detail Content Section */
+.detailContent {
+  width: 1168px;
+  height: 169px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.contentLabel {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.contentText {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+  color: #333333;
+  margin: 0 0 16px 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+.copySection {
+  height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  color: #1c1c1c;
+  transition: opacity 0.2s ease;
+}
+
+.copyButton:hover {
+  opacity: 0.7;
+}
+
+.copyIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.copyText {
+  font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.16px;
+  color: #1c1c1c;
+}
+
+/* Detail Footer Section */
+.detailFooter {
+  width: 1168px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  border-bottom: 1px solid #000000;
+  padding: 0 0 16px 0;
+  background-color: transparent;
+}
+
+.editButton {
+  width: 51px;
+}
+
+.deleteButton {
+  width: 51px;
+}
+
+/* Gap utilities */
+.gap64 {
+  width: 1168px;
+  height: 64px;
+}
+
+.gap24 {
+  width: 1168px;
+  height: 24px;
+}
+
+.gap16 {
+  width: 1168px;
+  height: 16px;
+}
+
+/* Retrospect Input Section */
+.retrospectInput {
+  width: 1168px;
+  height: 85px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  background-color: #ffffff;
+}
+
+.retrospectInput textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  font-family: inherit;
+  background-color: transparent;
+}
+
+.retrospectInput textarea::placeholder {
+  color: #999;
+}
+
+/* Retrospect List Section */
+.retrospectList {
+  width: 1168px;
+  height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  background-color: #fafafa;
+}
+
+.retrospectItem {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 32px 16px 0;
+  }
+  
+  .detailTitle,
+  .detailContent,
+  .detailFooter,
+  .retrospectInput,
+  .retrospectList,
+  .gap64,
+  .gap24,
+  .gap16 {
+    width: 100%;
+  }
+  
+  .detailTitle {
+    height: auto;
+    min-height: 84px;
+  }
+  
+  .detailContent {
+    height: auto;
+    min-height: 169px;
+  }
+  
+  .detailFooter {
+    height: auto;
+    min-height: 56px;
+    flex-wrap: wrap;
+  }
+  
+  .retrospectInput {
+    height: auto;
+    min-height: 85px;
+  }
+  
+  .retrospectList {
+    height: auto;
+    min-height: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
+  .emotionText {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .dateText,
+  .writtenText {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
+  .contentLabel {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .contentText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .copyText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  
+  .editButton,
+  .deleteButton {
+    font-size: 16px;
+    line-height: 20px;
+    width: 45px;
+    height: 36px;
+  }
+}
+

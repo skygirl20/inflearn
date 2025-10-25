@@ -37,32 +37,32 @@ export interface EmotionInfo {
 export const EMOTION_INFO: Record<EmotionType, EmotionInfo> = {
   [EmotionType.HAPPY]: {
     label: '행복해요',
-    imageM: '/icons/emotion-happy-m.svg',
-    imageS: '/icons/emotion-happy-s.svg',
+    imageM: '/images/emotion-happy-m.png',
+    imageS: '/images/emotion-happy-s.png',
     color: red[60], // #850A1B
   },
   [EmotionType.SAD]: {
     label: '슬퍼요',
-    imageM: '/icons/emotion-sad-m.svg',
-    imageS: '/icons/emotion-sad-s.svg',
+    imageM: '/images/emotion-sad-m.png',
+    imageS: '/images/emotion-sad-s.png',
     color: blue[60], // #3A5CF3
   },
   [EmotionType.ANGRY]: {
     label: '화나요',
-    imageM: '/icons/emotion-angry-m.svg',
-    imageS: '/icons/emotion-angry-s.svg',
+    imageM: '/images/emotion-angry-m.png',
+    imageS: '/images/emotion-angry-s.png',
     color: gray[60], // #777777
   },
   [EmotionType.SURPRISE]: {
     label: '놀랐어요',
-    imageM: '/icons/emotion-surprise-m.svg',
-    imageS: '/icons/emotion-surprise-s.svg',
+    imageM: '/images/emotion-surprise-m.png',
+    imageS: '/images/emotion-surprise-s.png',
     color: yellow[60], // #B27D00
   },
   [EmotionType.ETC]: {
     label: '기타',
-    imageM: '/icons/emotion-etc-m.svg',
-    imageS: '/icons/emotion-etc-s.svg',
+    imageM: '/images/emotion-etc-m.png',
+    imageS: '/images/emotion-etc-s.png',
     color: green[60], // #084424
   },
 } as const;
