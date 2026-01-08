@@ -3,7 +3,7 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { ko } from "date-fns/locale";
-import { Calendar, Trash2, Edit2, AlertCircle, Minus, ArrowDown, Tag } from "lucide-react";
+import { Calendar, Trash2, Edit2, AlertCircle, Minus, ArrowDown, Tag, Clock } from "lucide-react";
 
 import { Todo, Priority } from "@/types/todo.types";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -161,6 +161,7 @@ const TodoCard = ({ todo, onToggleComplete, onEdit, onDelete }: TodoCardProps) =
         {/* 생성일 및 수정일 표시 */}
         <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
+            <Clock className="size-3" />
             <span>생성:</span>
             <span>
               {format(new Date(todo.created_date), "yyyy년 MM월 dd일 HH:mm", { locale: ko })}
@@ -169,6 +170,7 @@ const TodoCard = ({ todo, onToggleComplete, onEdit, onDelete }: TodoCardProps) =
           {todo.updated_at && 
            new Date(todo.updated_at).getTime() !== new Date(todo.created_date).getTime() && (
             <div className="flex items-center gap-1">
+              <Clock className="size-3" />
               <span>수정:</span>
               <span>
                 {format(new Date(todo.updated_at), "yyyy년 MM월 dd일 HH:mm", { locale: ko })}
