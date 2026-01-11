@@ -1,0 +1,170 @@
+# AI 할 일 관리 웹 서비스 - 개발 규칙
+
+## 프로젝트 개요
+
+이 프로젝트는 Next.js 15 App Router 기반의 AI 할 일 관리 웹 서비스입니다.
+
+**핵심 원칙:**
+- 사용자 경험 최우선: 모든 상태(로딩/빈 상태/오류 상태)에 대한 UI 제공 필수
+- 사용자 메시지는 항상 한글로 작성
+- 개발 환경에서는 상세 로그 출력, 프로덕션에서는 사용자 친화적 메시지만 표시
+
+## 기술 스택
+
+- Next.js 15 (App Router) - 필수
+- TypeScript (strict 모드 권장) - 필수
+- Tailwind CSS - 스타일링
+- Shadcn/ui - UI 컴포넌트
+- Supabase - 인증 및 데이터베이스
+- AI SDK - AI 모델 연동
+- ESLint (Next.js/TypeScript 규칙) - 필수 준수
+
+## 코딩 규칙
+
+### 컴포넌트 작성
+
+**모든 React 컴포넌트는 다음 규칙을 따라야 합니다:**
+
+1. 함수형 컴포넌트만 사용 (클래스 컴포넌트 금지)
+2. 화살표 함수로 작성
+3. 파일명은 파스칼 케이스 (예: `TodoList.tsx`, `UserProfile.tsx`)
+4. 컴포넌트 이름과 파일명 일치 필수
+
+```typescript
+// ✅ 올바른 예
+const TodoList = () => {
+  return <div>할 일 목록</div>;
+};
+
+// ❌ 잘못된 예
+function TodoList() {
+  return <div>할 일 목록</div>;
+}
+```
+
+### 주석 및 문서화
+
+**모든 함수와 컴포넌트에는 다음이 필수입니다:**
+
+1. 상단에 한 문장 한글 개요
+2. JSDoc 주석 (한글로 작성)
+3. 복잡한 로직에는 인라인 한글 주석
+
+```typescript
+/**
+ * 할 일 목록을 표시하는 컴포넌트
+ * @param todos - 표시할 할 일 목록
+ * @returns 할 일 목록 UI
+ */
+const TodoList = ({ todos }: { todos: Todo[] }) => {
+  // 할 일 목록을 렌더링합니다
+  return (
+    <div>
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </div>
+  );
+};
+```
+
+### TypeScript 규칙
+
+- `any` 타입 사용 금지
+- 모든 인터페이스와 타입 명확히 정의
+- TypeScript strict 모드 준수
+
+```typescript
+// ✅ 올바른 예
+interface Todo {
+  id: string;
+  title: string;
+  completed: boolean;
+  createdAt: Date;
+}
+
+// ❌ 잘못된 예
+const todo: any = { ... };
+```
+
+### 파일명 규칙
+
+- 컴포넌트: 파스칼 케이스 (`TodoList.tsx`)
+- 유틸리티: 케밥 케이스 (`format-date.ts`)
+- 훅: 케밥 케이스 (`use-todos.ts`)
+- 타입: 케밥 케이스 (`todo.types.ts`)
+
+## 사용자 경험 (UX) 규칙
+
+### 상태 처리 필수
+
+**모든 비동기 작업과 데이터 페칭에 대해 다음 상태를 반드시 처리해야 합니다:**
+
+1. **로딩 상태**: 데이터 로딩 중 명확한 피드백 제공
+2. **빈 상태**: 데이터 없을 때 적절한 안내 메시지
+3. **오류 상태**: 오류 발생 시 사용자 친화적인 한글 메시지
+
+```typescript
+/**
+ * 할 일 목록을 불러오는 컴포넌트
+ */
+const TodoListPage = () => {
+  const { data, isLoading, error } = useTodos();
+
+  if (isLoading) {
+    return <LoadingSpinner message="할 일 목록을 불러오는 중입니다..." />;
+  }
+
+  if (error) {
+    return <ErrorMessage message="할 일 목록을 불러오는 중 오류가 발생했습니다." />;
+  }
+
+  if (!data || data.length === 0) {
+    return <EmptyState message="등록된 할 일이 없습니다." />;
+  }
+
+  return <TodoList todos={data} />;
+};
+```
+
+### 메시지 작성 규칙
+
+- 모든 사용자 메시지는 한글로 작성
+- 친절하고 명확한 메시지 사용
+- 개발 환경에서는 상세 로그 출력
+
+```typescript
+// 사용자에게 표시
+<ErrorMessage message="오류가 발생했습니다. 잠시 후 다시 시도해주세요." />
+
+// 개발 환경 로그
+if (process.env.NODE_ENV === 'development') {
+  console.error('상세 오류 정보:', error);
+}
+```
+
+## ESLint 규칙
+
+- Next.js 및 TypeScript ESLint 규칙 엄격히 준수
+- 커밋 전 ESLint 오류 없어야 함
+- `npm run lint` 실행 필수
+
+## Git 커밋 규칙
+
+- 커밋 메시지는 영어로 작성
+- 명확하고 간결한 메시지 사용
+- 예: `feat: Add todo creation functionality`
+- 예: `fix: Resolve loading state issue`
+
+## 코드 작성 시 체크리스트
+
+새로운 코드를 작성할 때 다음을 확인하세요:
+
+- [ ] 함수형 컴포넌트와 화살표 함수 사용
+- [ ] 파일명이 파스칼 케이스로 작성됨
+- [ ] 한글 주석과 JSDoc 작성됨
+- [ ] 로딩/빈 상태/오류 상태 UI 구현됨
+- [ ] 사용자 메시지가 한글로 작성됨
+- [ ] ESLint 오류 없음
+- [ ] TypeScript 타입 명확히 정의됨
+- [ ] `any` 타입 미사용
