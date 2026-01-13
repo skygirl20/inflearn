@@ -189,7 +189,7 @@ const TodoCard = ({ todo, onToggleComplete, onEdit, onDelete }: TodoCardProps) =
             aria-label="수정"
           >
             <Edit2 className="size-4" />
-            <span className="sr-only">수정</span>
+            <span>수정</span>
           </Button>
         )}
         {onDelete && (
@@ -201,7 +201,7 @@ const TodoCard = ({ todo, onToggleComplete, onEdit, onDelete }: TodoCardProps) =
             className="text-destructive hover:text-destructive"
           >
             <Trash2 className="size-4" />
-            <span className="sr-only">삭제</span>
+            <span>삭제</span>
           </Button>
         )}
       </CardFooter>

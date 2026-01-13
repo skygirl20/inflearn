@@ -45,8 +45,45 @@ function validateInput(input: string): { valid: boolean; error?: string; cleaned
     return { valid: false, error: "입력 내용이 너무 깁니다. 최대 500자까지 입력 가능합니다." };
   }
 
+  // 공백만 있는 경우 체크
+  if (/^\s+$/.test(input)) {
+    return { valid: false, error: "의미 있는 내용을 입력해주세요." };
+  }
+
+  // 같은 문자만 반복되는 경우 체크 (3자 이상)
+  if (cleaned.length >= 3) {
+    const firstChar = cleaned[0];
+    const isAllSame = cleaned.split('').every(char => char === firstChar || char === ' ');
+    if (isAllSame) {
+      return { valid: false, error: "의미 있는 내용을 입력해주세요." };
+    }
+  }
+
+  // 의미 없는 입력 체크: 한글/영문이 없고 짧은 경우
+  const hasKoreanOrEnglish = /[가-힣a-zA-Z]/.test(cleaned);
+  if (!hasKoreanOrEnglish && cleaned.length < 10) {
+    // 10자 미만이고 한글/영문이 없으면 의미 없는 입력으로 간주
+    return { valid: false, error: "의미 있는 내용을 입력해주세요." };
+  }
+
   // 연속된 공백을 하나로 통합
   cleaned = cleaned.replace(/\s+/g, " ");
+
+  // 대소문자 정규화: 문장의 첫 글자는 대문자, 나머지는 소문자로 변환
+  // 단, 이미 적절한 대소문자로 작성된 경우를 고려하여 보수적으로 처리
+  if (cleaned.length > 0) {
+    // 첫 글자가 영문 소문자면 대문자로 변환
+    const firstChar = cleaned[0];
+    if (/[a-z]/.test(firstChar)) {
+      cleaned = firstChar.toUpperCase() + cleaned.slice(1);
+    }
+    
+    // 나머지 부분에서 불필요한 대문자를 소문자로 변환 (단, 약어나 고유명사는 유지)
+    // 문장 중간의 대문자를 소문자로 변환 (단, 공백 뒤의 첫 글자는 유지)
+    cleaned = cleaned.replace(/([.!?]\s+)([a-z])/g, (match, p1, p2) => {
+      return p1 + p2.toUpperCase();
+    });
+  }
 
   // 특수 문자나 이모지는 허용 (한글, 영문, 숫자, 공백, 일반 특수문자, 이모지 모두 허용)
   // 단, 제어 문자는 제거
@@ -78,6 +115,7 @@ function postProcessResult(result: any, currentDate: string): any {
   }
 
   // 생성된 날짜가 과거인지 확인
+  let hasPastDate = false;
   if (processed.due_date) {
     try {
       const dueDate = new Date(processed.due_date);
@@ -89,6 +127,7 @@ function postProcessResult(result: any, currentDate: string): any {
 
       if (dueDate < today) {
         // 과거 날짜는 null로 설정
+        hasPastDate = true;
         processed.due_date = null;
         processed.due_time = null;
       }
@@ -98,6 +137,9 @@ function postProcessResult(result: any, currentDate: string): any {
       processed.due_time = null;
     }
   }
+
+  // 과거 날짜 플래그 추가
+  processed._hasPastDate = hasPastDate;
 
   // 우선순위 기본값 설정
   if (!processed.priority || !["high", "medium", "low"].includes(processed.priority)) {
@@ -293,8 +335,13 @@ export async function POST(request: NextRequest) {
       currentDate
     );
 
+    // _hasPastDate는 내부 플래그이므로 응답에서 제거
+    const { _hasPastDate, ...responseData } = processedResult;
+    const hasPastDate = _hasPastDate || false;
+
     return NextResponse.json({ 
-      data: processedResult,
+      data: responseData,
+      hasPastDate: hasPastDate,
       success: true 
     });
   } catch (error) {

@@ -5,8 +5,8 @@ import { cookies } from "next/headers";
  * 서버 컴포넌트용 Supabase 클라이언트 생성
  * Next.js App Router의 서버 컴포넌트에서 사용합니다.
  */
-export const createClient = () => {
-  const cookieStore = cookies();
+export const createClient = async () => {
+  const cookieStore = await cookies();
 
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,

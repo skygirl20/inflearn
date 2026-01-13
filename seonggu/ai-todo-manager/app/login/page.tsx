@@ -24,7 +24,7 @@ import { createClient } from "@/lib/supabase/client";
  * 로그인 페이지 컴포넌트
  * 이메일/비밀번호 기반 로그인 기능을 제공합니다.
  */
-const LoginPage = () => {
+const LoginPageContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [email, setEmail] = React.useState("");
@@ -250,6 +250,19 @@ const LoginPage = () => {
         </Card>
       </div>
     </div>
+  );
+};
+
+// Suspense로 감싼 로그인 페이지
+const LoginPage = () => {
+  return (
+    <React.Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-muted-foreground">로딩 중...</div>
+      </div>
+    }>
+      <LoginPageContent />
+    </React.Suspense>
   );
 };
 

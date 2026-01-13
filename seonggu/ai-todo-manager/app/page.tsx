@@ -25,15 +25,24 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
+import AIAnalysis from "@/components/todo/AIAnalysis";
 
 
 /**
  * 메인 페이지 컴포넌트
  * 할 일 관리의 메인 화면을 구성합니다.
  */
-const HomePage = () => {
+const HomePageContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [todos, setTodos] = React.useState<Todo[]>([]);
@@ -476,6 +485,14 @@ const HomePage = () => {
     setEditingTodo(null);
   };
 
+  // 다이얼로그 열림/닫힘 핸들러
+  const handleDialogOpenChange = (open: boolean) => {
+    setIsFormOpen(open);
+    if (!open) {
+      setEditingTodo(null);
+    }
+  };
+
   // 로그아웃 핸들러
   const handleLogout = async () => {
     try {
@@ -690,16 +707,52 @@ const HomePage = () => {
           )}
 
           <div className="grid gap-4 sm:gap-6">
-            {/* 할 일 추가/편집 폼 (열려있을 때만 표시) */}
-            {isFormOpen && (
-              <div className="w-full max-w-2xl mx-auto">
+            {/* 할 일 추가/편집 다이얼로그 */}
+            <Dialog open={isFormOpen} onOpenChange={handleDialogOpenChange}>
+              <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle>
+                    {editingTodo ? "할 일 수정" : "새 할 일 추가"}
+                  </DialogTitle>
+                  <DialogDescription>
+                    {editingTodo
+                      ? "할 일 정보를 수정하세요."
+                      : "새로운 할 일을 추가하세요."}
+                  </DialogDescription>
+                </DialogHeader>
                 <TodoForm
                   todo={editingTodo}
                   onSubmit={handleFormSubmit}
                   onCancel={handleCancelForm}
                   isLoading={isLoadingTodos}
                 />
-              </div>
+              </DialogContent>
+            </Dialog>
+
+            {/* AI 요약 및 분석 섹션 */}
+            {currentUser && (
+              <section className="min-w-0">
+                <Tabs defaultValue="today" className="w-full">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="today">오늘의 요약</TabsTrigger>
+                    <TabsTrigger value="week">이번 주 요약</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="today" className="mt-4">
+                    <AIAnalysis
+                      todos={todos}
+                      userId={currentUser.id}
+                      period="today"
+                    />
+                  </TabsContent>
+                  <TabsContent value="week" className="mt-4">
+                    <AIAnalysis
+                      todos={todos}
+                      userId={currentUser.id}
+                      period="week"
+                    />
+                  </TabsContent>
+                </Tabs>
+              </section>
             )}
 
             {/* 할 일 목록 */}
@@ -717,6 +770,19 @@ const HomePage = () => {
         </div>
       </main>
     </div>
+  );
+};
+
+// Suspense로 감싼 메인 페이지
+const HomePage = () => {
+  return (
+    <React.Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-muted-foreground">로딩 중...</div>
+      </div>
+    }>
+      <HomePageContent />
+    </React.Suspense>
   );
 };
 
