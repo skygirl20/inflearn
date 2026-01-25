@@ -16,15 +16,10 @@ public class ScannerWhileEx2 {
             }
 
             System.out.print("구매하려는 수량을 입력하세요: ");
-            // int price = scanner.nextInt();
+            int count = scanner.nextInt();
 
+            System.out.println("총 비용: " + price * count);
 
-
-/*            System.out.print("나이를 입력하세요: ");
-            int age = scanner.nextInt();
-            scanner.nextLine();
-
-            System.out.println("입력한 이름: " + name + ", 나이: " + age);*/
         }
     }
 }
